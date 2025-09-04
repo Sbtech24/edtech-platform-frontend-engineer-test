@@ -29,7 +29,7 @@ const VideoForm: React.FC<VideoFormProps> = ({onAdd}) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="space-y-3 p-4 bg-white shadow rounded-lg"
+      className="space-y-3 p-4 text-sm max-w-3xl mx-auto bg-white shadow rounded-lg dark:bg-black"
     
     >
       {/* Video Name */}
@@ -75,7 +75,7 @@ const VideoForm: React.FC<VideoFormProps> = ({onAdd}) => {
 
       <button
         type="submit"
-        className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        className="w-full bg-gray-900 text-white py-2 rounded cursor-pointer hover:bg-gray-500"
       >
         Add Video
       </button>
