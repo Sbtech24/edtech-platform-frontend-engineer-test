@@ -1,10 +1,10 @@
 import ReactPlayer from 'react-player'
+import { VideoPlayerProps } from '@/types';
 
-
-const VideoPlayer = () => {
+const VideoPlayer = ({ url }: VideoPlayerProps) => {
   return (
     <div>VideoPlayer
-        <ReactPlayer src='https://youtu.be/Y_JQti8YLn0' />
+        <ReactPlayer src={url || undefined}/>
     </div>
   )
 }

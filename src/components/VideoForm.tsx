@@ -8,7 +8,11 @@ interface FormTypes {
   url: string;
 }
 
-const VideoForm = () => {
+interface VideoFormProps {
+  onAdd: (data: FormTypes) => void;
+}
+
+const VideoForm: React.FC<VideoFormProps> = ({onAdd}) => {
   const {
     register,
     handleSubmit,
@@ -18,13 +22,15 @@ const VideoForm = () => {
 
   const onSubmit: SubmitHandler<FormTypes> = (data) => {
     console.log("Form Submitted:", data);
-    reset(); // clears the form after submit
+    onAdd(data)
+    reset(); 
   };
 
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
       className="space-y-3 p-4 bg-white shadow rounded-lg"
+    
     >
       {/* Video Name */}
       <div>
